@@ -95,7 +95,7 @@ php artisan serve
 
 The application will be available at `http://localhost:8000`
 
-## 🗄️ Database Seeding
+## Database Seeding
 
 The project includes seeders for testing data:
 
@@ -174,7 +174,7 @@ todo-app/
 - `GET /api/priorities` - Get all priorities
 
 
-## 🔍 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
