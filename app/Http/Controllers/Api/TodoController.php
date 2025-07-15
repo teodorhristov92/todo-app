@@ -43,7 +43,7 @@ class TodoController extends Controller
         ]);
         $validated['user_id'] = $request->user()->id;
         $todo = Todo::create($validated);
-        return new TodoResource($todo);
+        return new TodoResource($todo->load(['category', 'priority']));
     }
 
     public function show(Todo $todo)

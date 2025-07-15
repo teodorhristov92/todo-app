@@ -62,7 +62,7 @@ class TodoApiTest extends TestCase
             'priority_id' => $this->priority->id,
         ]);
         $response = $this->withHeader('Authorization', 'Bearer ' . $this->token)
-            ->putJson("/api/todos/{$todo->id}", [
+            ->patchJson("/api/todos/{$todo->id}", [
                 'title' => 'Updated Title',
             ]);
         $response->assertStatus(200)
@@ -79,7 +79,7 @@ class TodoApiTest extends TestCase
             'completed' => false,
         ]);
         $response = $this->withHeader('Authorization', 'Bearer ' . $this->token)
-            ->putJson("/api/todos/{$todo->id}", [
+            ->patchJson("/api/todos/{$todo->id}", [
                 'completed' => true,
             ]);
         $response->assertStatus(200)
