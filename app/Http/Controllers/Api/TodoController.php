@@ -53,6 +53,7 @@ class TodoController extends Controller
 
     public function update(Request $request, Todo $todo)
     {
+        \Log::info('TodoController@update called', ['todo_id' => $todo->id, 'request' => $request->all()]);
         // Ensure the todo belongs to the authenticated user
         if ($todo->user_id !== $request->user()->id) {
             return response()->json(['message' => 'Unauthorized'], 403);
